@@ -1,0 +1,18 @@
+<h1>Restaurants</h1>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+  <li>
+    <a href="/restaurants/<%= restaurant.id %>">
+      <%= restaurant.name %>
+    </a>
+    <%= restaurant.address %>
+    <a href="/restaurants/<%= restaurant.id %>/upvote">
+      (<%= restaurant.votes%>/100)
+    </a>
+    <a href="/restaurants/<%= restaurant.id %>/destroy">
+      x
+    </a>
+  </li>
+  <% end %>
+</ul>
